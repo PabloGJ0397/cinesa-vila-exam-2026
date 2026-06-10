@@ -19,6 +19,12 @@ public class Main {
         MovieView.save(movie2);
         MovieView.getMovies();
 
+        //Main test on DeleteMovieUseCase. Function 3
+        String id = "tt0133094";
+        MovieView.getMovies();
+        MovieView.delete(id);
+        MovieView.getMovies();
+
 
     }
 
