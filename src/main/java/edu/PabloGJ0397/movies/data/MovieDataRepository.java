@@ -21,5 +21,10 @@ public class MovieDataRepository implements MovieRepository {
     public ArrayList<Movie> getMovies() {
         return moviesMemLocalDataSource.findAll();
     }
+
+    @Override
+    public void delete(String id) {
+        moviesMemLocalDataSource.delete(id);
+    }
 }
 
