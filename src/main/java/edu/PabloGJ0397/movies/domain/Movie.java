@@ -71,8 +71,9 @@ public class Movie {
                 "id='" + id + '\'' +
                 ", duration='" + duration + '\'' +
                 ", genre='" + genre + '\'' +
-                ", publishDate=" + publishDate +
-                ", Company='" + company + '\'' +
+                ", publishDate='" + publishDate + '\'' +
+                ", company='" + company + '\'' +
+                ", tittle='" + tittle + '\'' +
                 '}';
     }
 }
