@@ -1,21 +1,20 @@
 package edu.PabloGJ0397.movies.domain;
 
-import java.util.Date;
-
 public class Movie {
     private String id;
     private String duration;
     private String genre;
-    private Date publishDate;
-    private String Company;
+    private String publishDate;
+    private String company;
     private String tittle;
 
-    public Movie(String id, String duration, String genre, Date publishDate, String company) {
+    public Movie(String id, String duration, String genre, String publishDate, String company, String tittle) {
         this.id = id;
         this.duration = duration;
         this.genre = genre;
         this.publishDate = publishDate;
-        Company = company;
+        this.company = company;
+        this.tittle = tittle;
     }
 
     public String getId() {
@@ -42,20 +41,20 @@ public class Movie {
         this.genre = genre;
     }
 
-    public Date getPublishDate() {
+    public String getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(Date publishDate) {
+    public void setPublishDate(String publishDate) {
         this.publishDate = publishDate;
     }
 
     public String getCompany() {
-        return Company;
+        return company;
     }
 
     public void setCompany(String company) {
-        Company = company;
+        this.company = company;
     }
 
     public String getTittle() {
@@ -73,7 +72,7 @@ public class Movie {
                 ", duration='" + duration + '\'' +
                 ", genre='" + genre + '\'' +
                 ", publishDate=" + publishDate +
-                ", Company='" + Company + '\'' +
+                ", Company='" + company + '\'' +
                 '}';
     }
 }
