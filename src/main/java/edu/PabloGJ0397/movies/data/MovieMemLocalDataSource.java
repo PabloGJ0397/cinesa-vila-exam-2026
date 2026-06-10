@@ -5,20 +5,27 @@ import edu.PabloGJ0397.movies.domain.Movie;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class MoviesMemLocalDataSource {
+public class MovieMemLocalDataSource {
+    private static MovieMemLocalDataSource instance = null;
     private ArrayList<Movie> storage = new ArrayList<>();
 
     public ArrayList<Movie> findAll() {
         return storage;
     }
 
-    public void save(Movie pelicula) {
-        storage.add(pelicula);
+    public void save(Movie movie) {
+        storage.add(movie);
     }
 
     public void delete(String id) {
         storage.removeIf(movie ->
                 Objects.equals(movie.getId(), id)
         );
+    }
+    public static MovieMemLocalDataSource getInstance(){
+        if (instance == null){
+            instance = new MovieMemLocalDataSource();
+        }
+        return instance;
     }
 }
