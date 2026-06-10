@@ -3,6 +3,8 @@ package edu.PabloGJ0397.movies.data;
 import edu.PabloGJ0397.movies.domain.Movie;
 import edu.PabloGJ0397.movies.domain.MovieRepository;
 
+import java.util.ArrayList;
+
 public class MovieDataRepository implements MovieRepository {
     private MovieMemLocalDataSource moviesMemLocalDataSource;
 
@@ -13,6 +15,11 @@ public class MovieDataRepository implements MovieRepository {
     @Override
     public void save(Movie movie) {
         moviesMemLocalDataSource.save(movie);
+    }
+
+    @Override
+    public ArrayList<Movie> getMovies() {
+        return moviesMemLocalDataSource.findAll();
     }
 }
 
