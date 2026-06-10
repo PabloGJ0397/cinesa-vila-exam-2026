@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieMockRepository implements MovieRepository {
-    private Integer countSaveMethod = 0;
+    public Integer countSaveMethod = 0;
 
     @Override
     public void save(Movie movie) { countSaveMethod++;
