@@ -19,4 +19,5 @@ public class MovieView {
         ArrayList<Movie> movies = getMoviesUseCase.execute();
         System.out.println(movies);
     }
+
 }
