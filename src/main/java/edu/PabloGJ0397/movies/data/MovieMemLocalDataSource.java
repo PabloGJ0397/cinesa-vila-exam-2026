@@ -9,6 +9,13 @@ public class MovieMemLocalDataSource {
     private static MovieMemLocalDataSource instance = null;
     private ArrayList<Movie> storage = new ArrayList<>();
 
+    public static MovieMemLocalDataSource getInstance() {
+        if (instance == null) {
+            instance = new MovieMemLocalDataSource();
+        }
+        return instance;
+    }
+
     public ArrayList<Movie> findAll() {
         return storage;
     }
@@ -21,11 +28,5 @@ public class MovieMemLocalDataSource {
         storage.removeIf(movie ->
                 Objects.equals(movie.getId(), id)
         );
-    }
-    public static MovieMemLocalDataSource getInstance(){
-        if (instance == null){
-            instance = new MovieMemLocalDataSource();
-        }
-        return instance;
     }
 }

@@ -6,7 +6,8 @@ public class DeleteMovieUseCase {
     public DeleteMovieUseCase(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
-    public void execute(String id){
+
+    public void execute(String id) {
         movieRepository.delete(id);
     }
 }

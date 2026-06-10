@@ -6,7 +6,8 @@ public class SaveMovieUseCase {
     public SaveMovieUseCase(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
-    public void execute(Movie movie){
+
+    public void execute(Movie movie) {
         movieRepository.save(movie);
     }
 }

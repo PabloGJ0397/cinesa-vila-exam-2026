@@ -8,7 +8,8 @@ public class GetMoviesUseCase {
     public GetMoviesUseCase(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
-    public ArrayList<Movie> execute(){
+
+    public ArrayList<Movie> execute() {
         ArrayList<Movie> movies = movieRepository.getMovies();
         return movies;
     }

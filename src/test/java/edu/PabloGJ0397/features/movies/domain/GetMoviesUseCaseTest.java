@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 import java.util.ArrayList;
 
 public class GetMoviesUseCaseTest {
@@ -19,14 +18,14 @@ public class GetMoviesUseCaseTest {
     public NullMovieMockRepository nullMovieMockRepository;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         movieMockRepository = new MovieMockRepository();
         getMoviesUseCase = new GetMoviesUseCase(movieMockRepository);
     }
 
     //Test returning a List of Movies.
     @Test
-    public void shouldReturnMovieListWhenExecuted(){
+    public void shouldReturnMovieListWhenExecuted() {
         // Given
         // Needed parametters have been declared in setUp()
 
@@ -34,14 +33,14 @@ public class GetMoviesUseCaseTest {
         ArrayList<Movie> movies = getMoviesUseCase.execute();
 
         // Then
-        Assertions.assertEquals(4,movies.size());
+        Assertions.assertEquals(4, movies.size());
         Assertions.assertEquals("tt0133093", movies.get(0).getId());
     }
 
 
     //Test returning an Empty Movie List.
     @Test
-    public void shouldReturnEmptyMovieListWhenExecuted(){
+    public void shouldReturnEmptyMovieListWhenExecuted() {
         // Given
         emptyMovieMockRepository = new EmptyMovieMockRepository();
         getMoviesUseCase = new GetMoviesUseCase(emptyMovieMockRepository);
@@ -50,12 +49,12 @@ public class GetMoviesUseCaseTest {
         ArrayList<Movie> movies = getMoviesUseCase.execute();
 
         // Then
-        Assertions.assertEquals(0,movies.size());
+        Assertions.assertEquals(0, movies.size());
     }
 
     // Test returning Null.
     @Test
-    public void shouldReturnNullWhenExecuted(){
+    public void shouldReturnNullWhenExecuted() {
         // Given
         nullMovieMockRepository = new NullMovieMockRepository();
         getMoviesUseCase = new GetMoviesUseCase(nullMovieMockRepository);

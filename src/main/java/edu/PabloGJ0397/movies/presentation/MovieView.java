@@ -10,17 +10,19 @@ import edu.PabloGJ0397.movies.domain.SaveMovieUseCase;
 import java.util.ArrayList;
 
 public class MovieView {
-    public static void save(Movie movie){
+    public static void save(Movie movie) {
         SaveMovieUseCase saveMovieUseCase = new SaveMovieUseCase(new MovieDataRepository(MovieMemLocalDataSource.getInstance()));
         saveMovieUseCase.execute(movie);
 
     }
-    public static void getMovies(){
+
+    public static void getMovies() {
         GetMoviesUseCase getMoviesUseCase = new GetMoviesUseCase(new MovieDataRepository(MovieMemLocalDataSource.getInstance()));
         ArrayList<Movie> movies = getMoviesUseCase.execute();
         System.out.println(movies);
     }
-    public static void delete(String id){
+
+    public static void delete(String id) {
         DeleteMovieUseCase deleteMovieUseCase = new DeleteMovieUseCase(new MovieDataRepository(MovieMemLocalDataSource.getInstance()));
         deleteMovieUseCase.execute(id);
     }

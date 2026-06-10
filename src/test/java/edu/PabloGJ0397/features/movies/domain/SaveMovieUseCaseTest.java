@@ -12,16 +12,16 @@ public class SaveMovieUseCaseTest {
     public MovieMockRepository movieMockRepository;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         movieMockRepository = new MovieMockRepository();
         saveMovieUseCase = new SaveMovieUseCase(movieMockRepository);
     }
 
     //Test returning nothing. Validation on save() method execution via counter.
     @Test
-    public void shouldCallSaveMethodWhenExecuted(){
+    public void shouldCallSaveMethodWhenExecuted() {
         // Given
-        Movie movie5 = new Movie("tt0133099","160","Drama","25/05/2001","Paramount","Invictus");
+        Movie movie5 = new Movie("tt0133099", "160", "Drama", "25/05/2001", "Paramount", "Invictus");
 
         // When
         saveMovieUseCase.execute(movie5);

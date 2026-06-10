@@ -9,7 +9,8 @@ public class NullMovieMockRepository implements MovieRepository {
     private Integer countSaveMethod = 0;
 
     @Override
-    public void save(Movie movie) {    }
+    public void save(Movie movie) {
+    }
 
     @Override
     public ArrayList<Movie> getMovies() {
@@ -17,5 +18,6 @@ public class NullMovieMockRepository implements MovieRepository {
     }
 
     @Override
-    public void delete(String id) {    }
+    public void delete(String id) {
+    }
 }
